@@ -1,0 +1,144 @@
+:root {
+    --primary-color: #45ad61;
+    --secondary-color: #4dc96e;
+    --tertiary-color: #368a4c;
+    --accent-color: #29753d;
+    --background-color: #f4f4f4;
+    --highlight-color: #2ac77b;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--accent-color);
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+    background: var(--secondary-color);
+    color: var(--background-color);
+    padding-top: 20px;
+    text-align: center;
+    font-size: 24px;
+}
+
+nav {
+    position: sticky;
+    top: 60px;
+    z-index: 1000;
+    background: var(--primary-color);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    color: var(--background-color);
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav a {
+        margin: 10px 0;
+    }
+}
+.main-content {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+h2, h3 {
+    color: var(--primary-color);
+}
+
+.contact-form {
+    margin-bottom: 40px;
+}
+
+.contact-form h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.form-group textarea {
+    height: 150px;
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--highlight-color);
+}
+
+.alternative-contact {
+    margin-top: 40px;
+}
+
+.alternative-contact ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.alternative-contact li {
+    margin-bottom: 10px;
+}
+
+.alternative-contact a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.alternative-contact a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+}
+
+footer p {
+    margin: 0;
+}
