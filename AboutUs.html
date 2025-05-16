@@ -8,7 +8,7 @@
 </head>
 <body>
   <header>
-    <h1>About Me</h1>
+    <h1 id="main-heading">About Me</h1>
     <p>Everything that I am able to share with you!</p>
     <nav>
       <a href="index.html">Return To Homepage</a>
@@ -18,7 +18,7 @@
   <div class="main-content">
     <section class="about-section">
       <div class="about-image">
-        <img src="pictures/5b67dfc2-e5de-45a5-9a80-905732b224c7.jpg" alt="Jeorgen's photo" />
+        <img id="profile-pic" src="pictures/5b67dfc2-e5de-45a5-9a80-905732b224c7.jpg" alt="Jeorgen's photo" />
       </div>
       <div class="about-text">
         <h2>Hello, I'm Jeorgen!</h2>
@@ -41,18 +41,64 @@
         </ul>
 
         <div class="learn-more">
-          <a href="#contact">Learn More</a>
+          <a href="#contact" id="learn-more-link">Learn More</a>
         </div>
       </div>
     </section>
 
     <section id="contact" class="contact">
-      <h3>Contact</h3>
+      <h3 id="contact-heading">Contact</h3>
       <p>Email me at <a href="mailto:princess.jeorgen.bugtay@adamson.edu.ph">princess.jeorgen.bugtay@adamson.edu.ph</a></p>
     </section>
   </div>
 
   <footer>
+    <p>&copy; 2025 My Blog. All rights reserved</p>
+  </footer>
+
+  <!-- Flashy JavaScript Effects -->
+  <script>
+    // 1. Animated heading color change
+    const heading = document.getElementById('main-heading');
+    let colors = ['#2ac77b', '#45ad61', '#29753d'];
+    let i = 0;
+    setInterval(() => {
+      heading.style.color = colors[i % colors.length];
+      i++;
+    }, 1000);
+
+    // 2. Image hover effect with shake
+    const img = document.getElementById('profile-pic');
+    img.addEventListener('mouseover', () => {
+      img.style.transition = 'transform 0.3s';
+      img.style.transform = 'rotate(2deg) scale(1.05)';
+    });
+    img.addEventListener('mouseout', () => {
+      img.style.transform = 'rotate(0deg) scale(1)';
+    });
+
+    // 3. Typing effect on Contact heading
+    const learnMore = document.getElementById('learn-more-link');
+    const contactHeading = document.getElementById('contact-heading');
+    const originalText = 'Contact';
+
+    learnMore.addEventListener('click', function(e) {
+      e.preventDefault();
+      contactHeading.textContent = '';
+      let idx = 0;
+
+      document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+
+      const typing = setInterval(() => {
+        contactHeading.textContent += originalText.charAt(idx);
+        idx++;
+        if (idx === originalText.length) clearInterval(typing);
+      }, 150);
+    });
+  </script>
+</body>
+</html>
+
     <p>&copy; 2025 My Blog. All rights reserved</p>
   </footer>
 </body>
